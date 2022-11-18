@@ -5,14 +5,115 @@ import 'package:flutter/material.dart';
 class CalcPage extends StatefulWidget {
   const CalcPage({super.key});
 
+
   @override
   State<CalcPage> createState() => _CalcPageState();
 }
 
 class _CalcPageState extends State<CalcPage> {
+  String enteredText = '';
+  String operator = '';
+  int i = 1;
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 20),
+                    child: Text(
+                      enteredText,
+                      style: const TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                      overflow: TextOverflow.fade,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                color: const Color(0x1A696969),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: (){
+                            setState(() {
+                              enteredText = enteredText.substring(0, enteredText.length - 1);
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            )
+                          ),
+                          child: const Text(
+                            'AC',
+                            style: TextStyle(
+                              color: Color(0xff26F4CE),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            if(i == 1) {
+                              operator = '-';
+                              i++;
+                              setState(() {
+                                enteredText += '-';
+                              });
+                            } else if (i == 2) {
+                              operator = '+';
+                              i--;
+                              setState(() {
+                                enteredText += '+';
+                              });
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff272B33),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '+/-',
+                            style: TextStyle(
+                              color: Color(0xff26F4CE),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
     // TODO: implement build
-    throw UnimplementedError();
   }
 }
