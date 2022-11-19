@@ -104,8 +104,78 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator = "%";
+                            setState(() {
+                              enteredText += "%";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff272B33),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '%',
+                            style: TextStyle(
+                              color: Color(0xff26F4CE),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator = "/";
+                            setState(() {
+                              enteredText += "/";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff272B33),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '/',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += "7";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff272B33),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '7',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
