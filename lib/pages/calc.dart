@@ -17,6 +17,7 @@ class _CalcPageState extends State<CalcPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0x1A696969),
       body: SafeArea(
         child: Column(
           children: [
@@ -59,11 +60,11 @@ class _CalcPageState extends State<CalcPage> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0x1A696969),
-                            fixedSize: const Size(50, 50),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            )
+                              backgroundColor: const Color(0x1A696969),
+                              fixedSize: const Size(50, 50),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              )
                           ),
                           child: const Text(
                             'AC',
@@ -90,7 +91,7 @@ class _CalcPageState extends State<CalcPage> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff272B33),
+                            backgroundColor: const Color(0x1A696969),
                             fixedSize: const Size(50, 50),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -112,7 +113,7 @@ class _CalcPageState extends State<CalcPage> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff272B33),
+                            backgroundColor: const Color(0x1A696969),
                             fixedSize: const Size(50, 50),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -130,18 +131,18 @@ class _CalcPageState extends State<CalcPage> {
                           onPressed: () {
                             operator = "/";
                             setState(() {
-                              enteredText += "/";
+                              enteredText += "÷";
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff272B33),
+                            backgroundColor: const Color(0x1A696969),
                             fixedSize: const Size(50, 50),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                           ),
                           child: const Text(
-                            '/',
+                            '÷',
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -160,7 +161,7 @@ class _CalcPageState extends State<CalcPage> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff272B33),
+                            backgroundColor: const Color(0x1A696969),
                             fixedSize: const Size(50, 50),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -174,8 +175,314 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '8';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '8',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '9';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '9',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator += '*';
+                            setState(() {
+                              enteredText += '×';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '×',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
-                    )
+                    ),
+                    Row (
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '4';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '4',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '5';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '5',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '6';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '6',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator += '-';
+                            setState(() {
+                              enteredText += '-';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0)
+                            ),
+                          ),
+                          child: const Text(
+                            '-',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '1';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '1',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '2';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '2',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '3';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '3',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator += '+';
+                            setState(() {
+                              enteredText += '+';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '+',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row (
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Icon(Icons.refresh),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '0';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '0',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += '.';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            '.',
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
