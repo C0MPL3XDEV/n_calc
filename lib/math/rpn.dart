@@ -8,7 +8,7 @@ class RPN {
 
   static RPN getInstance() => _instance;
 
-  Future<double> evaluate(String op) async {
+  double evaluate(String op) {
     List<double> numbers = [];
     List<String> parts = op.split(" ");
 
@@ -29,7 +29,7 @@ class RPN {
     return numbers[0];
   }
 
-  Future<bool> checkValidity(String op) async {
+  bool checkValidity(String op) {
     int numbers = 0;
     int ops = 0;
     List<String> parts = op.split(" ");
