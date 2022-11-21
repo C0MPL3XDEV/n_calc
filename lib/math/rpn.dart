@@ -21,6 +21,7 @@ class RPN {
         numbers.add(number);
       } else if (functions.checkConstant(part)) {
         numbers.add(functions.getConstant(part)!);
+      } else if (part == "") {
       } else {
         double b = numbers.removeLast();
         double a = numbers.removeLast();
@@ -50,6 +51,7 @@ class RPN {
           return false;
         }
         ops++;
+      } else if (part == "") {
       } else {
         return false;
       }
