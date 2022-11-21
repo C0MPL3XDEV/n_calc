@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         backgroundColor: Colors.black,
       ),
+      themeMode: ThemeMode.system,
       home: const CalcPage(),
     );
   }

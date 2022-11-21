@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 
+import '../math/rpn.dart';
+
 class CalcPage extends StatefulWidget {
   const CalcPage({super.key});
-
 
   @override
   State<CalcPage> createState() => _CalcPageState();
@@ -14,6 +15,7 @@ class _CalcPageState extends State<CalcPage> {
   String enteredText = '';
   String operator = '';
   int i = 1;
+  RPN rpn = RPN.getInstance();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,9 +56,103 @@ class _CalcPageState extends State<CalcPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(
-                          onPressed: (){
+                          onPressed: () {
+                            operator += ' ^ ';
                             setState(() {
-                              enteredText = enteredText.substring(0, enteredText.length - 1);
+                              enteredText += " ^ ";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            ' ^ ',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator += ' log ';
+                            setState(() {
+                              enteredText += " log ";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(70, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            ' log ',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator += ' sin ';
+                            setState(() {
+                              enteredText += " sin ";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(70, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            ' sin ',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            operator += ' cos ';
+                            setState(() {
+                              enteredText += " cos ";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(70, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            ' cos ',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText = enteredText.substring(
+                                  0, enteredText.length - 1);
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -64,8 +160,7 @@ class _CalcPageState extends State<CalcPage> {
                               fixedSize: const Size(50, 50),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
-                              )
-                          ),
+                              )),
                           child: const Text(
                             'AC',
                             style: TextStyle(
@@ -76,7 +171,7 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            if(i == 1) {
+                            if (i == 1) {
                               operator = '-';
                               i++;
                               setState(() {
@@ -241,7 +336,7 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                       ],
                     ),
-                    Row (
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(
@@ -318,8 +413,7 @@ class _CalcPageState extends State<CalcPage> {
                             backgroundColor: const Color(0x1A696969),
                             fixedSize: const Size(50, 50),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0)
-                            ),
+                                borderRadius: BorderRadius.circular(15.0)),
                           ),
                           child: const Text(
                             '-',
@@ -421,24 +515,9 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                       ],
                     ),
-                    Row (
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              enteredText += '';
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0x1A696969),
-                            fixedSize: const Size(50, 50),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                          ),
-                          child: const Icon(Icons.refresh),
-                        ),
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
@@ -480,6 +559,29 @@ class _CalcPageState extends State<CalcPage> {
                               fontSize: 20,
                             ),
                           ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText =
+                                  enteredText.replaceFirst(RegExp(r".$"), "");
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Icon(Icons.backspace),
+                        ),
+                        ElevatedButton(
+                          onPressed: () async {
+                            if (await rpn.checkValidity(enteredText) {
+                              enteredText = await rpn.evaluate(enteredText);
+                            }
+                          },
                         ),
                       ],
                     ),
