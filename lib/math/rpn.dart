@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:n_calc/math/functions.dart';
 
 class RPN {
@@ -10,7 +12,8 @@ class RPN {
 
   double evaluate(String op) {
     List<double> numbers = [];
-    List<String> parts = op.split(" ");
+    List<String> parts = op.trim().split(" ");
+    log(parts.toString());
 
     for (String part in parts) {
       double? number = double.tryParse(part);
