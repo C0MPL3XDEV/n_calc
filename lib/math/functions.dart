@@ -1,6 +1,18 @@
 import 'dart:collection';
 import 'dart:math';
 
+double factorial(double n) {
+  double result = 1.0;
+
+  for (int i = 1; i <= n; i++) {
+    result *= i;
+  }
+
+  result += result * (n - n.truncate());
+
+  return result;
+}
+
 class Functions {
   final Map<String, Function> operations = HashMap();
   final Map<String, double> constants = HashMap();
@@ -10,8 +22,10 @@ class Functions {
     operations["-"] = (double a, double b) => a - b;
     operations["*"] = (double a, double b) => a * b;
     operations["/"] = (double a, double b) => a / b;
+    operations["!"] = (double a, double b) => a / b;
     operations["%"] = (double a, double b) => a % b;
     operations["^"] = (double a, double b) => pow(a, b);
+    operations["!"] = (double a, double b) => factorial(a) * b;
     operations["log"] = (double a, double b) {
       if (b == e) {
         return log(a);
