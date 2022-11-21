@@ -68,6 +68,69 @@ class _CalcPageState extends State<CalcPage> {
                           ),
                           child: const Icon(Icons.space_bar),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += " tan ";
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            'tan',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += 'e';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            'e',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              enteredText += 'pi';
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            'π',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     Row(
