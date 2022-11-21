@@ -14,8 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'N Calc',
       theme: ThemeData(
+        brightness: Brightness.light,
         primarySwatch: Colors.green,
-        backgroundColor: Colors.black,
+        toggleableActiveColor: Colors.green,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.green,
+        toggleableActiveColor: Colors.green,
       ),
       home: const CalcPage(),
     );
