@@ -35,7 +35,8 @@ class RPN {
   bool checkValidity(String op) {
     int numbers = 0;
     int ops = 0;
-    List<String> parts = op.split(" ");
+    List<String> parts = op.trim().split(" ");
+    log(parts.toString());
 
     if (parts.length < 3) {
       return false;
