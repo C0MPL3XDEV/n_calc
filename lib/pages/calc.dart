@@ -1,8 +1,8 @@
 // Here goes the UI of the calculator
 
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
-import '../math/rpn.dart';
+import "../math/rpn.dart";
 
 class CalcPage extends StatefulWidget {
   const CalcPage({super.key});
@@ -12,9 +12,7 @@ class CalcPage extends StatefulWidget {
 }
 
 class _CalcPageState extends State<CalcPage> {
-  String enteredText = '';
-  String operator = '';
-  int i = 1;
+  String enteredText = "";
   RPN rpn = RPN.getInstance();
   @override
   Widget build(BuildContext context) {
@@ -82,7 +80,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            'tan',
+                            "tan",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -92,7 +90,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += 'e';
+                              enteredText += " e ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -103,7 +101,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            'e',
+                            "e",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -113,7 +111,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += 'pi';
+                              enteredText += " pi ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -124,7 +122,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            'π',
+                            "π",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -138,7 +136,6 @@ class _CalcPageState extends State<CalcPage> {
                       children: [
                         ElevatedButton(
                           onPressed: () {
-                            operator += ' ^ ';
                             setState(() {
                               enteredText += " ^ ";
                             });
@@ -151,7 +148,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            ' ^ ',
+                            " ^ ",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -160,7 +157,6 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += ' log ';
                             setState(() {
                               enteredText += " log ";
                             });
@@ -173,7 +169,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            ' log ',
+                            " log ",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -182,7 +178,6 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += ' sin ';
                             setState(() {
                               enteredText += " sin ";
                             });
@@ -195,7 +190,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            ' sin ',
+                            " sin ",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -204,7 +199,6 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += ' cos ';
                             setState(() {
                               enteredText += " cos ";
                             });
@@ -217,7 +211,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            ' cos ',
+                            " cos ",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -242,7 +236,7 @@ class _CalcPageState extends State<CalcPage> {
                                 borderRadius: BorderRadius.circular(15.0),
                               )),
                           child: const Text(
-                            'AC',
+                            "AC",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -252,7 +246,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '!';
+                              enteredText += " ! ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -263,7 +257,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            ' ! ',
+                            " ! ",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -272,7 +266,6 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator = " % ";
                             setState(() {
                               enteredText += " % ";
                             });
@@ -285,7 +278,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '%',
+                            "%",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -294,9 +287,8 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator = "/";
                             setState(() {
-                              enteredText += "÷";
+                              enteredText += " / ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -307,7 +299,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '÷',
+                            "÷",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -333,7 +325,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '7',
+                            "7",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -343,7 +335,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '8';
+                              enteredText += "8";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -354,7 +346,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '8',
+                            "8",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -364,7 +356,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '9';
+                              enteredText += "9";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -375,7 +367,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '9',
+                            "9",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -384,9 +376,8 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += '*';
                             setState(() {
-                              enteredText += '×';
+                              enteredText += "×";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -397,7 +388,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '×',
+                            "×",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -412,7 +403,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '4';
+                              enteredText += "4";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -423,7 +414,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '4',
+                            "4",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -433,7 +424,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '5';
+                              enteredText += "5";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -444,7 +435,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '5',
+                            "5",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -454,7 +445,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '6';
+                              enteredText += "6";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -465,7 +456,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '6',
+                            "6",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -474,9 +465,8 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += '-';
                             setState(() {
-                              enteredText += ' -';
+                              enteredText += " -";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -486,7 +476,7 @@ class _CalcPageState extends State<CalcPage> {
                                 borderRadius: BorderRadius.circular(15.0)),
                           ),
                           child: const Text(
-                            '-',
+                            "-",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -501,7 +491,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '1';
+                              enteredText += "1";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -512,7 +502,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '1',
+                            "1",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -522,7 +512,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '2';
+                              enteredText += "2";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -533,7 +523,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '2',
+                            "2",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -543,7 +533,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '3';
+                              enteredText += "3";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -554,7 +544,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '3',
+                            "3",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -563,9 +553,8 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += ' + ';
                             setState(() {
-                              enteredText += ' + ';
+                              enteredText += " + ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -576,7 +565,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '+',
+                            "+",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
@@ -591,7 +580,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '0';
+                              enteredText += "0";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -602,7 +591,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '0',
+                            "0",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -612,7 +601,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += '.';
+                              enteredText += ".";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -623,7 +612,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '.',
+                            ".",
                             style: TextStyle(
                               color: Color(0xffFFFFFF),
                               fontSize: 20,
@@ -648,10 +637,12 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            if (rpn.checkValidity(enteredText)) {
-                              enteredText =
-                                  rpn.evaluate(enteredText).toString();
-                            }
+                            setState(() {
+                              if (rpn.checkValidity(enteredText)) {
+                                enteredText =
+                                    rpn.evaluate(enteredText).toString();
+                              }
+                            });
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0x1A696969),
@@ -661,7 +652,7 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            ' = ',
+                            "=",
                             style: TextStyle(
                               color: Color(0xffD76061),
                               fontSize: 20,
