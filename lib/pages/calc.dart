@@ -57,6 +57,24 @@ class _CalcPageState extends State<CalcPage> {
                       children: [
                         ElevatedButton(
                           onPressed: () {
+                            enteredText += " ";
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Icon(Icons.space_bar),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
                             operator += ' ^ ';
                             setState(() {
                               enteredText += " ^ ";
@@ -151,8 +169,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText = enteredText.substring(
-                                  0, enteredText.length - 1);
+                              enteredText = "";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -164,26 +181,16 @@ class _CalcPageState extends State<CalcPage> {
                           child: const Text(
                             'AC',
                             style: TextStyle(
-                              color: Color(0xff26F4CE),
+                              color: Color(0xffD76061),
                               fontSize: 20,
                             ),
                           ),
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            if (i == 1) {
-                              operator = '-';
-                              i++;
-                              setState(() {
-                                enteredText += '-';
-                              });
-                            } else if (i == 2) {
-                              operator = '+';
-                              i--;
-                              setState(() {
-                                enteredText += '+';
-                              });
-                            }
+                            setState(() {
+                              enteredText += '!';
+                            });
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0x1A696969),
@@ -193,18 +200,18 @@ class _CalcPageState extends State<CalcPage> {
                             ),
                           ),
                           child: const Text(
-                            '+/-',
+                            ' ! ',
                             style: TextStyle(
-                              color: Color(0xff26F4CE),
+                              color: Color(0xffD76061),
                               fontSize: 20,
                             ),
                           ),
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator = "%";
+                            operator = " % ";
                             setState(() {
-                              enteredText += "%";
+                              enteredText += " % ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -217,7 +224,7 @@ class _CalcPageState extends State<CalcPage> {
                           child: const Text(
                             '%',
                             style: TextStyle(
-                              color: Color(0xff26F4CE),
+                              color: Color(0xffD76061),
                               fontSize: 20,
                             ),
                           ),
@@ -406,7 +413,7 @@ class _CalcPageState extends State<CalcPage> {
                           onPressed: () {
                             operator += '-';
                             setState(() {
-                              enteredText += '-';
+                              enteredText += ' -';
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -493,9 +500,9 @@ class _CalcPageState extends State<CalcPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            operator += '+';
+                            operator += ' + ';
                             setState(() {
-                              enteredText += '+';
+                              enteredText += ' + ';
                             });
                           },
                           style: ElevatedButton.styleFrom(
@@ -577,11 +584,26 @@ class _CalcPageState extends State<CalcPage> {
                           child: const Icon(Icons.backspace),
                         ),
                         ElevatedButton(
-                          onPressed: () async {
-                            if (await rpn.checkValidity(enteredText) {
-                              enteredText = await rpn.evaluate(enteredText);
+                          onPressed: () {
+                            if (rpn.checkValidity(enteredText)) {
+                              enteredText =
+                                  rpn.evaluate(enteredText).toString();
                             }
                           },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0x1A696969),
+                            fixedSize: const Size(50, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          child: const Text(
+                            ' = ',
+                            style: TextStyle(
+                              color: Color(0xffD76061),
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
                       ],
                     ),
