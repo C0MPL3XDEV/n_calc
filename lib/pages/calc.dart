@@ -377,7 +377,7 @@ class _CalcPageState extends State<CalcPage> {
                         ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              enteredText += "×";
+                              enteredText += " * ";
                             });
                           },
                           style: ElevatedButton.styleFrom(
